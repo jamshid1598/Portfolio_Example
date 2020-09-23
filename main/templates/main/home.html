@@ -1,0 +1,74 @@
+{% extends 'main/header.html' %}
+{% load static %}
+
+  {% block content %}
+    {% for source in info %}
+		<div class="row">
+			<div class="col-md-3">
+				<div class="card card-body h-100 border-info" id="profile-wrapper" >
+
+
+						<img id="profile-pic" src="{{ source.user_image.url }}">
+						<h4>{{ source.user_full_name }}</h4> <hr>
+						<h5>{{ source.user_job }}</h5>
+						<p>{{ source.user_description }}</p>
+
+
+					<ul class="social-links">
+						<li><a href="#"><img class="social" src="{% static 'images/Facebook.png' %}" alt=""></a></li>
+						<li><a href="#"><img class="social" src="{% static 'images/Instagram.png' %}" alt=""></a></li>
+						<li><a href="#"><img class="social" src="{% static 'images/Messenger.png' %}" alt=""></a></li>
+						<li><a href="#"><img class="social" src="{% static 'images/Twitter.png' %}" alt=""></a></li>
+						<li><a href="#"><img class="social" src="{% static 'images/Youtube.png' %}" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="card card-body h-100 border-info">
+					<h4>User Experience</h4> <hr>
+
+						<p>{{ source.user_experience }}</p>
+
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h4>User Knowledge</h4> <hr>
+
+						<p>{{ source.user_knowledge }}</p>
+
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h4>User Skill</h4> <hr>
+
+						<p>{{ source.user_skill }}</p>
+				
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h4>Achivement</h4> <hr>
+				
+						<p>{{ source.user_achievement }}</p>
+				
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card card-body h-100">
+					<h4>Extra Information</h4> <hr>
+
+						<p>{{ source.extra_info }}</p>
+				
+				</div>
+			</div>
+		</div>
+	{% endfor %}	
+  {% endblock %}
